@@ -140,7 +140,8 @@ public class Account {
     public List<Match> getMatches() {
         if (matches == null) {
             try {
-                String json = ValorantAPI.sendRequest("/v3/matches/eu/%s/%s?filter=competitive".formatted(name, tag));
+                String json = ValorantAPI.sendRequest("/v3/matches/eu/%s/%s?filter=competitive&size=10".formatted(name, tag));
+                System.out.println("fetched");
                 ObjectMapper objectMapper = new ObjectMapper();
                 JsonNode jsonNode = objectMapper.readTree(json);
 
