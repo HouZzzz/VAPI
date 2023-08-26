@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class AgentImages {
     @JsonProperty("small")
     private String small;
-    @JsonProperty("buts")
+    @JsonProperty("bust")
     private String bust;
     @JsonProperty("full")
     private String full;

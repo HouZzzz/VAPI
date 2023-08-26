@@ -14,8 +14,8 @@ import java.net.URL;
 import java.util.Optional;
 
 public class ValorantAPI {
-    private String DOMAIN = "https://api.henrikdev.xyz/valorant";
-    private String key;
+    private static String DOMAIN = "https://api.henrikdev.xyz/valorant";
+    private static String key;
 
     private ObjectMapper objectMapper = new ObjectMapper();
 
@@ -73,7 +73,7 @@ public class ValorantAPI {
         }
     }
 
-    private String sendRequest(String path) {
+    public static String sendRequest(String path) {
         try {
             URL url = new URL(DOMAIN + path);
             System.out.println("sending request to " + url);

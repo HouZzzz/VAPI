@@ -1,7 +1,9 @@
 package org.vapi.Entity.MatchObject;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Player {
     @JsonProperty("puuid")
     private String puuid;
@@ -18,7 +20,7 @@ public class Player {
 
     @JsonProperty("currenttier")
     private int currentTier;
-    @JsonProperty("currenttierpatched")
+    @JsonProperty("currenttier_patched")
     private String currentTierPatched;
     @JsonProperty("player_card")
     private String playerCardID;

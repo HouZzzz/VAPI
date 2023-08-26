@@ -1,6 +1,14 @@
 package org.vapi.Entity.AccountObject;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.vapi.Entity.MatchObject.Match;
+import org.vapi.ValorantAPI;
+
+import java.util.List;
 
 public class Account {
     @JsonProperty("puuid")
@@ -35,6 +43,8 @@ public class Account {
 
     @JsonProperty("by_season")
     private BySeason bySeason;
+
+    private List<Match> matches;
 
     public Account() {
     }
@@ -125,6 +135,28 @@ public class Account {
 
     public void setBySeason(BySeason bySeason) {
         this.bySeason = bySeason;
+    }
+
+    public List<Match> getMatches() {
+        if (matches == null) {
+            try {
+                String json = ValorantAPI.sendRequest("/v3/matches/eu/%s/%s?filter=competitive".formatted(name, tag));
+                ObjectMapper objectMapper = new ObjectMapper();
+                JsonNode jsonNode = objectMapper.readTree(json);
+
+                String matchesJson = jsonNode.get("data").toString();
+
+                matches = objectMapper.readValue(matchesJson, new TypeReference<>() {});
+            } catch (JsonProcessingException e) {
+                System.out.println(e.getMessage());
+                return null;
+            }
+        }
+        return matches;
+    }
+
+    public void setMatches(List<Match> matches) {
+        this.matches = matches;
     }
 
     @Override
