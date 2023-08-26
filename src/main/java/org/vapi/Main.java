@@ -1,7 +1,7 @@
 package org.vapi;
 
-import org.vapi.Entity.Account;
-import org.vapi.Entity.Act;
+import org.vapi.Entity.AccountObject.Account;
+import org.vapi.Entity.AccountObject.Act;
 
 import java.io.IOException;
 import java.util.*;

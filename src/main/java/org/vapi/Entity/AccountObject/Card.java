@@ -1,4 +1,4 @@
-package org.vapi.Entity;
+package org.vapi.Entity.AccountObject;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

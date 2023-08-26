@@ -1,4 +1,4 @@
-package org.vapi.Entity;
+package org.vapi.Entity.AccountObject;
 
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.core.JsonProcessingException;

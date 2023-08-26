@@ -1,7 +1,6 @@
-package org.vapi.Entity;
+package org.vapi.Entity.AccountObject;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 public class Account {
     @JsonProperty("puuid")
