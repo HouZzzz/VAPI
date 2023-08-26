@@ -1,6 +1,7 @@
 package org.vapi.Entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 public class Account {
     @JsonProperty("puuid")
@@ -26,6 +27,15 @@ public class Account {
 
     @JsonProperty("last_update_raw")
     private long lastUpdateTimestamp;
+
+    @JsonProperty("current_data")
+    private CurrentData currentData;
+
+    @JsonProperty("highest_rank")
+    private HighestRank highestRank;
+
+    @JsonProperty("by_saeson")
+    private BySeason bySeason;
 
     public Account() {
     }
