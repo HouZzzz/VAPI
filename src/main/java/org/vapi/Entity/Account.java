@@ -34,7 +34,7 @@ public class Account {
     @JsonProperty("highest_rank")
     private HighestRank highestRank;
 
-    @JsonProperty("by_saeson")
+    @JsonProperty("by_season")
     private BySeason bySeason;
 
     public Account() {
@@ -104,6 +104,30 @@ public class Account {
         this.lastUpdateTimestamp = lastUpdateTimestamp;
     }
 
+    public CurrentData getCurrentData() {
+        return currentData;
+    }
+
+    public void setCurrentData(CurrentData currentData) {
+        this.currentData = currentData;
+    }
+
+    public HighestRank getHighestRank() {
+        return highestRank;
+    }
+
+    public void setHighestRank(HighestRank highestRank) {
+        this.highestRank = highestRank;
+    }
+
+    public BySeason getBySeason() {
+        return bySeason;
+    }
+
+    public void setBySeason(BySeason bySeason) {
+        this.bySeason = bySeason;
+    }
+
     @Override
     public String toString() {
         return "Account{" +
@@ -115,6 +139,9 @@ public class Account {
                 ", card=" + card +
                 ", lastUpdate='" + lastUpdate + '\'' +
                 ", lastUpdateTimestamp=" + lastUpdateTimestamp +
+                ", currentData=" + currentData +
+                ", highestRank=" + highestRank +
+                ", bySeason=" + bySeason +
                 '}';
     }
 }

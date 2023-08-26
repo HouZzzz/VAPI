@@ -47,8 +47,19 @@ public class ValorantAPI {
 
             String account = jsonNode.get("data").toString();
 
-            Account value = objectMapper.readValue(account, new TypeReference<Account>() {});
-            return Optional.ofNullable(value);
+            Account byRiotIDContainer = objectMapper.readValue(account, new TypeReference<Account>() {});
+
+            path = "/v2/by-puuid/mmr/eu/" + byRiotIDContainer.getPuuid();
+            jsonNode = objectMapper.readTree(sendRequest(path));
+            status = jsonNode.get("status").asInt();
+            if (status != 200) {
+                System.out.println("not 200");
+                return Optional.empty();
+            }
+            account = jsonNode.get("data").toString();
+
+            Account filledAccount = objectMapper.readValue(account, new TypeReference<Account>() {});
+            return Optional.ofNullable(filledAccount);
         } catch (JsonProcessingException e) {
             System.out.println(e.getMessage());
             return Optional.empty();

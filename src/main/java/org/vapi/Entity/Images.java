@@ -9,7 +9,7 @@ public class Images {
     @JsonProperty("large")
     private String large;
 
-    @JsonProperty("tierange_down")
+    @JsonProperty("triangle_down")
     private String triangleDown;
 
     @JsonProperty("triangle_up")

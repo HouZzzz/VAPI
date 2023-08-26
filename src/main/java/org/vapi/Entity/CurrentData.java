@@ -19,6 +19,9 @@ public class CurrentData {
     @JsonProperty("elo")
     private int elo;
 
+    @JsonProperty("mmr_change_to_last_game")
+    private int lastGameEloDelta;
+
     @JsonProperty("games_needed_for_rating")
     private int gamesNeededForRating;
 
@@ -81,6 +84,14 @@ public class CurrentData {
         this.actual = actual;
     }
 
+    public int getLastGameEloDelta() {
+        return lastGameEloDelta;
+    }
+
+    public void setLastGameEloDelta(int lastGameEloDelta) {
+        this.lastGameEloDelta = lastGameEloDelta;
+    }
+
     @Override
     public String toString() {
         return "CurrentData{" +
@@ -89,6 +100,7 @@ public class CurrentData {
                 ", images=" + images +
                 ", eloInTier=" + eloInTier +
                 ", elo=" + elo +
+                ", lastGameEloDelta=" + lastGameEloDelta +
                 ", gamesNeededForRating=" + gamesNeededForRating +
                 ", actual=" + actual +
                 '}';

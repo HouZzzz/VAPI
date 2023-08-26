@@ -23,6 +23,9 @@ public class Act {
     @JsonProperty("act_rank_wins")
     private List<ActWin> actWins;
 
+    @JsonProperty("error")
+    private String error;
+
     public int getWins() {
         return wins;
     }
@@ -69,5 +72,26 @@ public class Act {
 
     public void setActWins(List<ActWin> actWins) {
         this.actWins = actWins;
+    }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
+    @Override
+    public String toString() {
+        return "Act{" +
+                "wins=" + wins +
+                ", games=" + games +
+                ", finalRank=" + finalRank +
+                ", finalRankPatched='" + finalRankPatched + '\'' +
+                ", actual=" + actual +
+                ", actWins=" + actWins +
+                ", error=" + error +
+                '}';
     }
 }
