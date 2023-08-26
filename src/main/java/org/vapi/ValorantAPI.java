@@ -59,6 +59,15 @@ public class ValorantAPI {
             account = jsonNode.get("data").toString();
 
             Account filledAccount = objectMapper.readValue(account, new TypeReference<Account>() {});
+
+            filledAccount.setPuuid(byRiotIDContainer.getPuuid());
+            filledAccount.setRegion(byRiotIDContainer.getRegion());
+            filledAccount.setLevel(byRiotIDContainer.getLevel());
+            filledAccount.setCard(byRiotIDContainer.getCard());
+            filledAccount.setLastUpdate(byRiotIDContainer.getLastUpdate());
+            filledAccount.setLastUpdateTimestamp(byRiotIDContainer.getLastUpdateTimestamp());
+
+
             return Optional.ofNullable(filledAccount);
         } catch (JsonProcessingException e) {
             System.out.println(e.getMessage());
