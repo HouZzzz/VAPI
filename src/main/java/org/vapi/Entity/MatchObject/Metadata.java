@@ -32,7 +32,7 @@ public class Metadata {
     @JsonProperty("season_id")
     private String seasonID;
 
-    @JsonProperty("match_id")
+    @JsonProperty("matchid")
     private String matchID;
 
     @JsonProperty("region")
